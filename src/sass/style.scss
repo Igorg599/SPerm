@@ -1,0 +1,106 @@
+@import 'libs/bootstrap-reboot.min';
+@import 'base/animations';
+
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header {
+  min-height: 50px;
+  width: 100%;
+  background-color: #fff;
+}
+  
+.row {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.logo_img {
+  height: 70px;
+}
+
+.menu{
+  display: flex;
+  justify-content: center;
+  padding: 5px 10px;
+  height: 40px;
+  margin: 0;
+  list-style-type: none;
+  &_link {
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-weight: 600;
+  } 
+  &_item {
+    border-right: 2px double rgb(0, 0, 0);
+    padding-right: 14px;
+    padding-left: 14px;
+    &:last-child {
+      border-right: none
+    }     
+  }   
+}
+
+.contact_us img {
+  height: 40px;
+  margin-right: 10px;
+}
+.contact_us_wrap {
+  font-size: 20px;
+}
+.contact_us_phone {
+  color: black;
+}
+.contact_us_img {
+  animation-name: groupbeat;
+  animation-duration: 4s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  &:hover {
+      animation-play-state: paused;
+  }
+}
+
+.tag {
+  min-height: 100px;
+  background-color: rgb(255, 255, 255);
+  &_descr {
+    text-align: center;
+    margin: 15px auto 0 auto;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 23px;
+    color: rgb(179, 95, 95);
+  }
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: 900;
+  padding: 30px auto;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  
+  &.elegantshadow {
+    color: #131313;
+    background-color: #ffffff;
+    letter-spacing: .15em;
+    text-shadow: 
+      1px -1px 0 #999999, 
+      -1px 2px 1px #999999, 
+      -2px 4px 1px #999999,  
+      -3px 6px 1px #999999,  
+      -4px 8px 1px #999999,  
+      -5px 10px 1px #999999,
+      -6px 12px 1px #999999, 
+      -7px 14px 1px #999999, 
+      -8px 16px 1px #999999, 
+      -9px 18px 1px #999999;
+  }
+}
