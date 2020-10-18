@@ -104,3 +104,55 @@ h3 {
       -9px 18px 1px #999999;
   }
 }
+
+
+.info {
+  margin-top: 15px;
+  position: relative;
+  min-height: 800px;
+  background: url(../img/info.jpg) center center/cover no-repeat;
+  &_items {
+    min-height: 700px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  &_header {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 100px;
+    color: rgb(255, 255, 255);
+  }
+  &_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: center;
+    &:hover {
+      background-color: rgba(247, 6, 6, 0.4);
+      transition-duration: 2s;
+    }
+  }
+  &_head {
+    margin-top: 30px;
+    font-size: 50px;
+    font-weight: 800;
+    color: #fff;
+  }
+  &_des {
+    display: block;
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(255, 234, 234);
+  }
+  &_descr {
+    display: none;
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 20px;
+  }
+}
