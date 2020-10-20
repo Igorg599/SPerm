@@ -281,3 +281,59 @@ h3 {
     color: black;
   }
 }
+
+.divider_footer {
+  width: 600px;
+  height: 3px;
+  background-color: rgba(247, 6, 6, 0.4);
+  margin: 10px auto 10px auto;
+}
+
+footer {
+  margin-top: 65px;
+  min-height: 350px;
+  background: url(../img/drawings.jpg) center center/cover no-repeat;
+}
+
+.visit {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  &_item {
+    width: 320px;
+    text-align: center;
+  }
+  &_phone {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.12);
+    border: none;
+    margin-top: 30px;
+    width: 240px;
+    height: 40px;
+    border-radius: 8px;
+    background-image: linear-gradient(to top, #779196 0%, #dff0f3 100%);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.21);
+    color: #272323;
+    font-size: 25px;
+    font-weight: 400;
+    text-transform: uppercase;
+    &:hover {
+      background-image: none;
+      background-color:  #f5aeae;
+    }
+  }
+  &_head {
+    margin-top: 15px;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  &_descr {
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
