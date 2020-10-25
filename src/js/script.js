@@ -225,4 +225,20 @@ window.addEventListener('DOMContentLoaded', () => {
     scrolling('.pageup');
 });
 
+//Встроенный слайдер на второстепенных страницах
+$(function() {
+    let showcase = $("#showcase");
+    showcase.Cloud9Carousel({
+        yOrigin: 30,
+        yRadius: 50,
+        itemClass: "card",
+        buttonLeft: $(".snav-left"),
+        buttonRight: $(".snav-right"),
+        bringToFront: true,
+        onLoaded: function() {
+            showcase.css('visibility', 'visible');
+            showcase.fadeIn( 100 );
+        }
+    });
+});
 
