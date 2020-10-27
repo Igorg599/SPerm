@@ -681,3 +681,112 @@ footer {
     font-size: 13px;
   }
 }
+
+@media (max-width: 575px) {
+  h3 {
+    font-size: 16px;
+  }
+  .relization_tab {
+    height: 180px;
+  }
+  .realization_head {
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 15px;
+    font-weight: 600;
+  }
+  .realization_descr {
+    font-size: 17px;
+    font-weight: 700;
+  }
+  .row {
+    flex-direction: column;
+  }
+  .feedback-slider-item img {
+    height: 450px;
+  }
+  .map_info {
+    width: 280px;
+  }  
+  .advantages_descr {
+    width: 200px;
+  }
+  .advantages_des{
+    width: 200px;
+  }
+  .map_head {
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: 600;
+  }
+  .visit_item {
+    width: 160px;
+  }
+  .visit_head {
+    font-size: 16px;
+  }
+  .visit_descr {
+    font-size: 12px;
+  }
+  .info_header {
+    font-size: 23px;
+  }
+  .info_head {
+    margin-top: 15px;
+    font-size: 30px;
+  }
+  .info_des {
+    font-size: 22px;
+  }
+  .info_descr {
+    font-size: 13px;
+  }
+  .advantages {
+    margin-left: 25px;
+  }
+  .menu {
+    display: none;
+  }
+  .logo_img {
+    height: 70px;
+  }
+  .contact_us img {
+    height: 25px;
+  }
+  .contact_us_wrap {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  h1 {
+    font-size: 18px;
+    font-weight: 700;
+    &.elegantshadow {
+      color: #131313;
+      background-color: #ffffff;
+      letter-spacing: .15em;
+      text-shadow: 
+        1px -1px 0 #999999, 
+        -1px 2px 1px #999999, 
+        -2px 4px 1px #999999,  
+        -3px 6px 1px #999999,  
+        -4px 8px 1px #999999,  
+        -5px 10px 1px #999999,
+        -6px 12px 1px #999999, 
+    }
+  }
+  .tag_descr {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 14px;
+  }
+  #showcase {
+    padding-top: 20px;
+    height: 370px;
+  }
+  #showcase .card {
+    width: 200px;
+  }
+  #showcase .card p {
+    display: none;
+  }
+}
