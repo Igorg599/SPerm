@@ -1,6 +1,9 @@
 @import 'libs/bootstrap-reboot.min';
 @import 'base/animations';
 
+* {
+  font-family: 'Abel', sans-serif;
+}
 
 .container {
     max-width: 1400px;
@@ -8,18 +11,18 @@
 }
 
 .pageup {
-  opacity: 0;
-  width: 44px ;
-  height: 44px;
-  position: fixed;
-  bottom: 15%;
-  right: 5%;
-  z-index: 30;
-  background-color: #fff;
-  cursor: pointer;
-  border: 3px solid rgb(57, 112, 231);
-    transition: 1s all;
-  }
+opacity: 0;
+width: 44px ;
+height: 44px;
+position: fixed;
+bottom: 15%;
+right: 5%;
+z-index: 30;
+background-color: #fff;
+cursor: pointer;
+border: 3px solid rgb(57, 112, 231);
+  transition: 1s all;
+}
 
 header {
   min-height: 50px;
@@ -127,7 +130,6 @@ h3 {
   font-weight: 600;
 }
 
-
 %transition_all_03s {
   transition:all .3s ease;
 }
@@ -232,6 +234,7 @@ h3 {
   transform:translateX(-50px);
 }
 
+
 .realization {
   display: none;
   grid-template-columns: 1fr 1fr;
@@ -254,6 +257,7 @@ h3 {
   font-weight: 700;
   color: rgb(179, 95, 95);
 }
+
 
 .divider {
   width: 600px;
@@ -376,15 +380,15 @@ h3 {
     transition-duration: 1s;
   }
 }
+.slider_header {
+  font-size: 23px;
+  font-weight: 700;
+}
 .advantages_head {
   font-size: 23px;
   font-weight: 700;
   line-height: 30px;
   color: rgb(148, 63, 63);
-}
-.slider_header {
-  font-size: 23px;
-  font-weight: 700;
 }
 .advantages_des {
   margin-bottom: 5px;
@@ -494,6 +498,7 @@ footer {
   }
 }
 
+
 #showcase {
   padding-top: 20px;
   overflow: hidden !important;
@@ -550,6 +555,7 @@ footer {
   border-radius: 5px 12px 12px 5px;
 }
 
+
 .survey_descr {
   display: block;
   text-align: center;
@@ -557,6 +563,7 @@ footer {
   font-size: 18px;
   color: rgb(179, 95, 95);
 }
+
 
 @media (max-width: 991px) {
   .realization {

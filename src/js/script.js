@@ -1,21 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
     'use strict';
 
-    
-    //Реализация всплытия отдельных блоков взамен других
-    let more = document.querySelectorAll('.info_item');
-    more.forEach(item => {
-        item.addEventListener('mouseover', () => {
-            item.querySelector('.info_des').style.display = 'none';
-            item.querySelector('.info_descr').style.display = 'block';
-        });
-        item.addEventListener('mouseout', () => {
-            item.querySelector('.info_descr').style.display = 'none';
-            item.querySelector('.info_des').style.display = 'block';
-        });
-    });
-
-
     // Слайдер на чистом JS
     const sliders = (slides, dir, prev, next) => {
         let slideIndex = 1,
@@ -89,6 +74,71 @@ window.addEventListener('DOMContentLoaded', () => {
     sliders('.feedback-slider-item', 'horizontal', '.main-prev-btn', '.main-next-btn');
 
 
+
+    //Реализация всплытия отдельных блоков взамен других
+    let more = document.querySelectorAll('.info_item');
+    more.forEach(item => {
+        item.addEventListener('mouseover', () => {
+            item.querySelector('.info_des').style.display = 'none';
+            item.querySelector('.info_descr').style.display = 'block';
+        });
+        item.addEventListener('mouseout', () => {
+            item.querySelector('.info_descr').style.display = 'none';
+            item.querySelector('.info_des').style.display = 'block';
+        });
+    });
+
+
+    //Плавный скроллинг на чистом JS
+    const scrolling = (upSelector) => {
+        const upElem = document.querySelector(upSelector);
+    
+        window.addEventListener('scroll', () => {
+            if (document.documentElement.scrollTop > 700) {
+                upElem.classList.add('animated', 'fadeIn');
+                upElem.classList.remove('fadeOut');
+            } else {
+                upElem.classList.add('fadeOut');
+                upElem.classList.remove('fadeIn');
+            }
+        });
+    
+        let links = document.querySelectorAll('[href^="#"]'),
+            speed = 0.3;
+    
+        links.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+    
+                let widthTop = document.documentElement.scrollTop,
+                    hash = this.hash, 
+                    toBlock = document.querySelector(hash).getBoundingClientRect().top,
+                    start = null;
+    
+                requestAnimationFrame(step);
+    
+                function step(time) {
+                    if (start === null) {
+                        start = time;
+                    }
+    
+                    let progress = time - start,
+                        r = (toBlock < 0 ? Math.max(widthTop - progress/speed, widthTop + toBlock) : Math.min(widthTop + progress/speed, widthTop + toBlock));
+    
+                        document.documentElement.scrollTo(0, r);
+    
+                    if (r != widthTop + toBlock) {
+                        requestAnimationFrame(step);
+                    } else {
+                        location.hash = hash;
+                    }
+                }
+            });
+        });
+    }
+    scrolling('.pageup');
+
+
     //Встроенный Главный слайдер на первой странице
     var mainSliderSelector = '.main-slider',
     navSliderSelector = '.nav-slider',
@@ -98,7 +148,7 @@ window.addEventListener('DOMContentLoaded', () => {
         loop: true,
         speed:1000,
         autoplay:{
-            delay:4000
+            delay:5000
         },
         loopAdditionalSlides: 10,
         grabCursor: true,
@@ -175,55 +225,9 @@ window.addEventListener('DOMContentLoaded', () => {
     mainSlider.controller.control = navSlider;
     navSlider.controller.control = mainSlider;
 
-    //Плавный скроллинг на чистом JS
-    const scrolling = (upSelector) => {
-        const upElem = document.querySelector(upSelector);
-    
-        window.addEventListener('scroll', () => {
-            if (document.documentElement.scrollTop > 700) {
-                upElem.classList.add('animated', 'fadeIn');
-                upElem.classList.remove('fadeOut');
-            } else {
-                upElem.classList.add('fadeOut');
-                upElem.classList.remove('fadeIn');
-            }
-        });
-    
-        let links = document.querySelectorAll('[href^="#"]'),
-            speed = 0.3;
-    
-        links.forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-    
-                let widthTop = document.documentElement.scrollTop,
-                    hash = this.hash, 
-                    toBlock = document.querySelector(hash).getBoundingClientRect().top,
-                    start = null;
-    
-                requestAnimationFrame(step);
-    
-                function step(time) {
-                    if (start === null) {
-                        start = time;
-                    }
-    
-                    let progress = time - start,
-                        r = (toBlock < 0 ? Math.max(widthTop - progress/speed, widthTop + toBlock) : Math.min(widthTop + progress/speed, widthTop + toBlock));
-    
-                        document.documentElement.scrollTo(0, r);
-    
-                    if (r != widthTop + toBlock) {
-                        requestAnimationFrame(step);
-                    } else {
-                        location.hash = hash;
-                    }
-                }
-            });
-        });
-    }
-    scrolling('.pageup');
+
 });
+
 
 //Встроенный слайдер на второстепенных страницах
 $(function() {
@@ -241,4 +245,5 @@ $(function() {
         }
     });
 });
+
 
